@@ -3,6 +3,8 @@
 namespace Engine\Service\Database;
 use Engine\Service\AbstractProvider;
 use Engine\Core\Database\Connection;
+use Engine\Core\Config\Config;
+
 /**
  * Database provider
  *
@@ -29,9 +31,9 @@ class Provider extends AbstractProvider
      */
     public function init() 
     {
-        $this->configDb = require __DIR__ . '/../../Config/config.php';
-        //var_dump($this->configDb['db']);
-        $db = new Connection($this->configDb['db']);
+        $this->configDb = $config['database'] = Config::file('database');
+        //var_dump($this->configDb);
+        $db = new Connection($this->configDb);
         $this->di->set($this->serviceName, $db);
     }
 

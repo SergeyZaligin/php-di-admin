@@ -3,7 +3,8 @@
 error_reporting(E_ALL);
  
 define('ROOT_DIR', __DIR__);
-define('ENV', 'Cms');
+define('ENV', 'Admin');
+ 
+require ROOT_DIR . '/../engine/bootstrap.php';
 
-require ROOT_DIR . '/engine/bootstrap.php';
 

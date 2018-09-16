@@ -20,6 +20,7 @@ abstract class Controller
     protected $config;
     
     /**
+     * Constructor Controller
      * 
      * @param DI $di object
      */
@@ -27,5 +28,6 @@ abstract class Controller
     {
         $this->di = $di;
         $this->view = $di->get('view');
+        $this->config = $this->di->get('config');
     }
 }

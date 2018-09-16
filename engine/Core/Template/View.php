@@ -11,16 +11,31 @@ use Engine\Core\Template\Theme;
  */
 class View 
 {
+    /**
+     *
+     * @var Theme object
+     */
     protected $theme;
     
+    /**
+     * Constructor View
+     */
     public function __construct() 
     {
         $this->theme = new Theme();
     }
     
+    /**
+     * Render view
+     * 
+     * @param type $template
+     * @param type $vars
+     * @throws \InvalidArgumentException
+     * @throws \Exception
+     */
     public function render($template, $vars = []) 
     {
-        $templatePath = ROOT_DIR . '/content/themes/default/' . $template . '.php';
+        $templatePath = $this->getTemplatePath($template, ENV);
         
         if(!is_file($templatePath))
         {
