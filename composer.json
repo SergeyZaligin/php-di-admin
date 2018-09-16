@@ -1,0 +1,21 @@
+{
+    "name": "sergey/di.loc",
+    "description": "di container cms",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey Zaligin",
+            "email": "webdevjsphp@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "Engine\\": "engine",
+          "Engine\\DI\\": "engine/DI",
+          "Cms\\": "cms",
+          "Cms\\Controller\\": "cms/Controller",
+          "Admin\\": "admin"
+        }
+     },
+    "require": {}
+}
